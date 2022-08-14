@@ -17,23 +17,32 @@ const Formulario = (props) => {
     <>
         <div className="container">
             <div className="row">
-                <div className="col-sm-2">
-                    <label className="mx-1 d-grid gap-2">
-                        Nombre:{" "}
-                    </label>
+                <div class="mb-3">
+                    <label for="mail-saliente" class="form-label">Email sistema</label>
+                    <input name="mail_saliente" type="email" class="form-control" id="mail-saliente" placeholder="name@example.com"/>
                 </div>
-                <div className="col-sm-8">
-                    <input
-                        onChange={handleChange}
-                        name="tarea"
-                        value={dato.tarea}
-                        type="text"
-                        className="form-control"
-                        autoComplete="off"
-                        />
+                <div class="mb-3">
+                    <label for="servidor-mail" class="form-label">Servidor email</label>
+                    <input name="servidor-mail" type="text" class="form-control" id="servidor-mail" placeholder="www.example.com"/>
+                </div>
+                <div class="mb-3">
+                    <label for="puerto-mail" class="form-label">Puerto email</label>
+                    <input name="puerto-mail" min="0" type="number" class="form-control" id="puerto-mail" />
+                </div>
+                <div class="mb-3">
+                    <label for="interes-bcp" class="form-label">Interes BCP</label>
+                    <input name="interes-bcp" min="0" type="number" class="form-control" id="interes-bcp" />
+                </div>
+                <div class="mb-3">
+                    <label for="interes-moratorio" class="form-label">Interes moratorio</label>
+                    <input name="interes-moratorio" min="0" type="number" class="form-control" id="interes-moratorio" />
+                </div>
+                <div class="mb-3">
+                    <label for="interes-punitorio" class="form-label">Interes punitorio</label>
+                    <input name="interes-punitorio" min="0" type="number" class="form-control" id="interes-punitorio" />
                 </div>
                 <div className="col-sm-2">
-                    <button onClick={handleAdd} className="btn btn-success">Nuevo</button>
+                    <button onClick={handleAdd} className="btn btn-success">Guardar</button>
                 </div>
             </div>
         </div>

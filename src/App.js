@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Panel from './componentes/Usuario/Panel'
+import Panel from './componentes/Parametro/Panel'
 
 function App() {
   return (
