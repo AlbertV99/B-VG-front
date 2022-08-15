@@ -7,22 +7,25 @@ const Peticiones = () => {
     const base = "http://localhost:8000/"
     // const [carga,setCarga] = useState(true)
     //FUNCIONES A UTILIZAR
-    const obtenerPanel = async (modulo,setState,pagina=0,buscar="",filtros=[])=>{
+    const obtenerPanel = async (modulo,setState,pagina=0,buscar="",filtros=[]) =>{
         // setCarga(true)
         // IDEA: Cambiar por constante de ambiente
         const url = base + modulo + "/"+pagina+"/"+((buscar!="")?buscar : "")
         const temp = await fetch(url)
         const data = await temp.json();
+        console.log(data,"testting");
+        console.log("testting");
         setState(data)
         // setCarga(false)
     }
 
-    const guardarNuevo = async (modulo,datos){
+    const guardarNuevo = async (modulo,datos)=>{
 
         const form = new FormData();
-        for (var variable in object) {
-            if (object.hasOwnProperty(variable)) {
-                form.append(variable, object[variable]);
+
+        for (var indice in datos) {
+            if (datos.hasOwnProperty(indice)) {
+                form.append(indice, datos[indice]);
             }
         }
         const url = base + modulo ;
@@ -33,8 +36,8 @@ const Peticiones = () => {
             "body": form
             }
         });
-        const temp = await fetch(url)
-        const data = await temp.json();
+        const res = await fetch(url)
+        const data = await res.json();
 
     }
 

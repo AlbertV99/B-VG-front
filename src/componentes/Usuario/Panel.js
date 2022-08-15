@@ -1,19 +1,17 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Tabla from './Tabla'
 import Formulario from './Formulario'
+import FetchUsuario from '../../helpers/peticiones'
 
 
-const Panel = () => {
-    const datos = {
-        "cabecera":['ID','Tarea'],
-        "lista":[
-            {"tarea":"1","descripcion":"Prueba de tarea 1"},
-            {"tarea":"2","descripcion":"Prueba de tarea 2"},
-            {"tarea":"3","descripcion":"Prueba de tarea 3"},
-        ],
-        
-    };
-    const [estadoForm,setEstadoForm] = useState(false)
+export const Panel = () => {
+    const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
+    const [estadoForm,setEstadoForm] = useState(false);
+    const [obtenerPanel] = FetchUsuario();
+    useEffect(()=>{
+        obtenerPanel("usuario",setDatos)
+        console.log(datos);
+    },[])
     return (
         <div className="container-fluid">
             <div className="row">
@@ -50,5 +48,3 @@ const Panel = () => {
         </div>
     )
 }
-
-export default Panel

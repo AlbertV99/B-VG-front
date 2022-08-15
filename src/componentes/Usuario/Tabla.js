@@ -4,6 +4,8 @@ import Fila from './Fila'
 
 const  Tabla = ({datos}) => {
     //// <th>Nombre</th><th>Correo</th><th>Rol</th>
+    const cabecera=["Nombre","Apellido","cedula"];
+    console.log(datos)
   return (
     <>
         <table className="table table-striped table-hover" style={{backgroundColor:"#ffffff"}}>
@@ -11,7 +13,7 @@ const  Tabla = ({datos}) => {
                 <tr style={{backgroundColor:'darkblue',color:'white'}}>
 
                     {
-                        datos.cabecera.map(
+                        cabecera.map(
                             (dato) => {
                              return  <th>{dato}</th>
                             }
@@ -22,8 +24,9 @@ const  Tabla = ({datos}) => {
             </thead>
             <tbody>
                 {
-                    datos.lista.map(
+                    datos.datos.map(
                     (fila)=>{
+                        console.log(fila);
                         return <Fila key="fila-{fila.dato1}" dato ={fila}/>
                     })
                 }
