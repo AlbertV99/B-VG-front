@@ -15,7 +15,7 @@ const Formulario = (props) => {
 
   return (
     <>
-        <div className="container">
+        <div className="container justify-content-center">
             <div class="row">
                 <div class="col-lg-3">
                     <label for="mailSaliente" class="form-label">Email sistema</label>
@@ -52,8 +52,11 @@ const Formulario = (props) => {
                     <label for="interesPunitorio" class="form-label">Interes punitorio</label>
                     <input name="interesPunitorio" min="0" type="number" class="form-control" id="interesPunitorio" onChange={handleChange} value={dato.interesPunitorio}/>
             </div>
-            <div className="col-lg-3">
-                 <button onClick={handleAdd} className="btn btn-success">Guardar</button>
+            <div className='row '>
+                <div className="col-sm-3">
+                    <button onClick={handleAdd} className="btn btn-success">Guardar</button>
+                    <button className='btn btn-success'>Volver</button>
+                </div>
             </div>
         </div>
     </>
