@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
-import Panel from './componentes/Parametro/Panel'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Panel from './componentes/Parametro/Panel';
+import  Navbar from './componentes/menu/Navbar';
+import Sidebar from './componentes/menu/Sidebar';
+
 
 function App() {
   return (
     <div className="App">
-        <Panel/>
+      <Router>
+        <Navbar/>
+        <Sidebar/>
+      </Router>
     </div>
   );
 }
