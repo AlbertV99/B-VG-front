@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Formulario from './Formulario'
 
 
-const Panel = () => {
+export function Panel  ()  {
     const datos = {
         "cabecera":['ID','Tarea'],
         "lista":[
@@ -23,7 +23,7 @@ const Panel = () => {
                 <p></p>
             </div>
         </div>
-    )
+    );
 }
 
-export default Panel
+

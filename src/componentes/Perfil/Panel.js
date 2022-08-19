@@ -3,7 +3,7 @@ import Tabla from './Tabla'
 import Formulario from './Formulario'
 
 
-const Panel = () => {
+export function Panel  ()  {
     const datos = {
         "cabecera":['ID','Tarea'],
         "lista":[
@@ -51,4 +51,3 @@ const Panel = () => {
     )
 }
 
-export default Panel
